@@ -22,8 +22,8 @@
 /* Here starts the styles related to forms and inputs */
 form {
   position: relative;
-  height: 24rem;
-  width: 20rem;
+  height: 30rem;
+  width: 33rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,6 +31,13 @@ form {
   background: #F6F6F6;
   border-radius: 12px;
   box-shadow: 0px 1px 12px #FAFAFA99;
+}
+.containerInput {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 input {
   height: 2.4rem;
@@ -49,16 +56,8 @@ input[type="button"], input[type="submit"] {
   width: 12rem;
   margin: 0.4rem;
   font-size: 1.2rem;
-  background: none;
-  border: 1px solid #FAFAFA;
   border-radius: 4px;
-  color: #FAFAFA;
-  cursor: pointer;
-  transition: 0.4s;
-}
-input[type="button"]:hover {
-  background: #FAFAFA;
-  color: #121212;
+  color: #FAFAFA99;
 }
 input[type="submit"] {
   background: #0099FF;
