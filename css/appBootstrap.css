@@ -28,11 +28,45 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #F6F6F6;
+  background: #FAFAFA;
   border-radius: 12px;
   box-shadow: 0px 1px 12px #FAFAFA99;
 }
-
-
-
+.containerInput {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+input[type=button], input[type=submit] {
+  width: 12rem;
+  margin: 0.3rem;
+}
+.confirmRegister {
+  margin-top: 1.2rem;
+}
+.custom-select {
+  font-size: 1rem;
+  width: 50%;
+  height: 2.375rem;
+  margin: 0.2rem!important;
+  background: none!important;
+}
+input {
+  margin: 0.2rem!important;
+  background: none!important;
+}
 /*Here begins the construction style of the table with the data from the dataBase*/
+table {
+  position: relative;
+  width: 40rem!important;
+  font-size: 1.2rem;
+  background: #F6F6F6;
+  box-shadow: 0 1px 12px #FAFAFA99;
+  border: 1px solid #121212;
+  border-radius: 4px;
+}
+th {
+  text-align: center!important;
+}
