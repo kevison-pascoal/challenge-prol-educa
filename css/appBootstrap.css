@@ -1,0 +1,38 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+#app {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #121212;
+}
+.titleSection {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #FAFAFA;
+}
+/* Here starts the styles related to forms and inputs */
+form {
+  position: relative;
+  height: 30rem;
+  width: 33rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #F6F6F6;
+  border-radius: 12px;
+  box-shadow: 0px 1px 12px #FAFAFA99;
+}
+
+
+
+/*Here begins the construction style of the table with the data from the dataBase*/
