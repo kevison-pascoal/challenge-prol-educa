@@ -56,8 +56,16 @@ input[type="button"], input[type="submit"] {
   width: 12rem;
   margin: 0.4rem;
   font-size: 1.2rem;
+  background: none;
+  border: 1px solid #FAFAFA;
   border-radius: 4px;
-  color: #FAFAFA99;
+  color: #FAFAFA;
+  cursor: pointer;
+  transition: 0.4s;
+}
+input[type="button"]:hover {
+  background: #FAFAFA;
+  color: #121212;
 }
 input[type="submit"] {
   background: #0099FF;
