@@ -16,35 +16,40 @@
 <body>
   <section id="app">
     <h1 class="titleSection">Challenge - Prol Educa</h1>
-    <input type="button" id="list" class="btn btn-outline-primary" onclick="listData()" value="List"></input>
-    <input type="button" id="register" class="btn btn-outline-primary" onclick="toRegister()" value="Register"></input>
+    <input type="button" id="list" class="btn btn-outline-info btn-lg" onclick="listData()" value="List"></input>
+    <input type="button" id="register" class="btn btn-outline-info btn-lg" onclick="toRegister()" value="Register"></input>
   </section>
   <script src="./js/app.js"></script>
   <script type="text/javascript">
     function listData() {
       app.innerHTML = `
         <h1 class="titleSection">List Users</h1>
-        <table>
-          <tr>
-            <th>&nbsp; id</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Password</th>
-          </tr>
-          <?php 
-            while($row = mysqli_fetch_object($consult)) {
-              echo "
-                <tr>
-                  <td>".$row -> id."</td>
-                  <td>".$row -> name."</td>
-                  <td>".$row -> email."</td>
-                  <td>".$row -> password."</td>
-                </tr>
-              ";
-            }   
-          ?>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Password</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php 
+              $count = 0;
+              while($row = mysqli_fetch_object($consult)) { 
+                echo "
+                  <tr>
+                    <td scope=".$count++.">".$row -> id."</td>
+                    <td>".$row -> name."</td>
+                    <td>".$row -> email."</td>
+                    <td>".$row -> password."</td>
+                  </tr>
+                ";
+              }   
+            ?>
+          </tbody>  
         </table>
-        <input type="button" id="back" onclick="backToIndex()" value="Back" style="margin: 2rem; color: #FAFAFA"></input>
+        <input type="button" id="back" class="btn btn-outline-secondary btn-lg" onclick="backToIndex()" value="Back" style="margin: 2rem; color: #FAFAFA"></input>
       `
     }
   </script>
