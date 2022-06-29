@@ -1,8 +1,6 @@
-<!--
 <?php 
   include('./class/connect.php');
 ?>
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
