@@ -29,8 +29,8 @@
             <tr>
               <th scope="col">id</th>
               <th scope="col">Name</th>
-              <th scope="col">Email</th>
-              <th scope="col">Password</th>
+              <th scope="col">Telephone</th>
+              <th scope="col">E-mail</th>
             </tr>
           </thead>
           <tbody>
@@ -40,9 +40,9 @@
                 echo "
                   <tr>
                     <td scope=".$count++.">".$row -> id."</td>
-                    <td>".$row -> name."</td>
+                    <td>".$row -> fullName."</td>
+                    <td>".$row -> telephone."</td>
                     <td>".$row -> email."</td>
-                    <td>".$row -> password."</td>
                   </tr>
                 ";
               }   
