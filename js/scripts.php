@@ -10,7 +10,7 @@
             <input type="text" name="lastName" id="lastName" class="form-control" placeholder="lastName">
           </div>
           <div class="input-group">
-            <input type="tel" name="tel" id="tel" class="form-control" placeholder="telephone">
+            <input type="tel" name="tel" id="tel" class="form-control" onkeydown="return maskTelephone(event)" placeholder="telephone">
             <input type="text" name="date" id="date" class="form-control" onfocus="(this.type='date')" placeholder="birth date"></input> 
           </div>
             
@@ -42,6 +42,29 @@
     const element = document.getElementById('inputGroupSelect02');
     for(let index = 0; index < states.length; index++) { 
       element.innerHTML += `<option value="${states[index]}">${states[index]}</option>`;
+    }
+  }
+  function maskTelephone(event) {
+    let key = event.key;
+    let telephone = event.target.value.replace(/\D+/g, "");
+    if(/^[0-9]$/i.test(key)) {
+      telephone = telephone + key;
+      let size = telephone.length;
+      if(size >= 12) {return false}
+      if(size > 10) {
+        telephone = telephone.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
+      } else if(size > 5) {
+        telephone = telephone.replace(/^(\d\d)(\d{4})(\d{0,4}).*/, "($1) $2-$3");
+      } else if(size > 2) {
+        telephone = telephone.replace(/^(\d\d)(\d{0,5})/, "($1) $2");
+      } else {
+        telephone = telephone.replace(/^(\d*)/, "($1");
+      }
+      event.target.value = telephone;
+      console.log(telephone);
+    }
+    if(!["Backspace", "Delete"].includes(key)) {
+      return false;
     }
   }
   function listData() {
