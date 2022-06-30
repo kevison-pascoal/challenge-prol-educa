@@ -15,6 +15,6 @@
     <input type="button" id="list" class="btn btn-outline-info btn-lg" onclick="listData()" value="List"></input>
     <input type="button" id="register" class="btn btn-outline-info btn-lg" onclick="toRegister()" value="Register"></input>
   </section>
-  <?php include('./js/scripts.php');?>
+  <?php include('./js/scripts.php'); include('./js/states.php'); ?>
 </body>
 </html>
