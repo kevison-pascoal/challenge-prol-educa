@@ -1,8 +1,6 @@
-<?php 
-  include('./class/connect.php');
-?>
+<?php include('./class/connect.php');?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-BR">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,39 +15,6 @@
     <input type="button" id="list" class="btn btn-outline-info btn-lg" onclick="listData()" value="List"></input>
     <input type="button" id="register" class="btn btn-outline-info btn-lg" onclick="toRegister()" value="Register"></input>
   </section>
-  <script src="./js/app.js"></script>
-  <script type="text/javascript">
-    function listData() {
-      app.innerHTML = `
-        <h1 class="titleSection">List Users</h1>
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">id</th>
-              <th scope="col">Name</th>
-              <th scope="col">Telephone</th>
-              <th scope="col">E-mail</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php 
-              $count = 0;
-              while($row = mysqli_fetch_object($consult)) { 
-                echo "
-                  <tr>
-                    <td scope=".$count++.">".$row -> id."</td>
-                    <td>".$row -> fullName."</td>
-                    <td>".$row -> telephone."</td>
-                    <td>".$row -> email."</td>
-                  </tr>
-                ";
-              }   
-            ?>
-          </tbody>  
-        </table>
-        <input type="button" id="back" class="btn btn-outline-secondary btn-lg" onclick="backToIndex()" value="Back" style="margin: 2rem; color: #FAFAFA"></input>
-      `
-    }
-  </script>
+  <?php include('./js/scripts.php');?>
 </body>
 </html>
