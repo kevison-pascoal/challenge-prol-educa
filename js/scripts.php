@@ -80,18 +80,19 @@
           </tr>
         </thead>
         <tbody>
-          <?php 
+          <?php
             $count = 0;
-            while($row = mysqli_fetch_object($consult)) { 
+            while($row = $stmt->fetch(PDO::FETCH_OBJ)) {
+              print_r($row->fullName);
               echo "
                 <tr>
-                  <td scope=".$count++.">".$row -> id."</td>
-                  <td>".$row -> fullName."</td>
-                  <td>".$row -> telephone."</td>
-                  <td>".$row -> email."</td>
+                  <td scope=".$count++.">".$row->id."</td>
+                  <td>".$row->fullName."</td>
+                  <td>".$row->telephone."</td>
+                  <td>".$row->email."</td>
                 </tr>
               ";
-            }   
+            }
           ?>
         </tbody>
       </table>
