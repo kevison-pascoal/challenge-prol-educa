@@ -27,7 +27,7 @@
   }
   mysqli_query($orm, "INSERT INTO register VALUES ('$id', '$name', '$telephone', '$email', '$date', '$mother', '$father', '$state', '$city')") or die("<br>Acess Denied.");
   while($row = mysqli_fetch_object($consult)) {
-    if($row -> name == null or $row -> email == null or $row -> password == null) {
+    if($row -> name == null or $row -> email == null or $row -> $name == null) {
       mysqli_query($orm, "DELETE FROM register WHERE id=$row->id");
     }
   }
