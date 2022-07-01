@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./css/appBootstrap.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <title>Challenge</title>
+  <style id="style"></style>
 </head>
 <body>
   <section id="app">
@@ -15,6 +16,6 @@
     <input type="button" id="list" class="btn btn-outline-info btn-lg" onclick="listData()" value="List"></input>
     <input type="button" id="register" class="btn btn-outline-info btn-lg" onclick="toRegister()" value="Register"></input>
   </section>
-  <?php include('./js/scripts.php'); include('./js/states.php'); ?>
+  <?php include('./js/scripts.php'); include('./js/states.php'); include('./js/validation.php')?>
 </body>
 </html>
