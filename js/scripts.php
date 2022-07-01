@@ -81,13 +81,11 @@
         </thead>
         <tbody>
           <?php
-            $count = 0;
             while($row = $stmt->fetch(PDO::FETCH_OBJ)) {
-              print_r($row->fullName);
               echo "
                 <tr>
-                  <td scope=".$count++.">".$row->id."</td>
-                  <td>".$row->fullName."</td>
+                  <td scope=".$row->user_id.">".$row->user_id."</td>
+                  <td>".$row->name."</td>
                   <td>".$row->telephone."</td>
                   <td>".$row->email."</td>
                 </tr>
