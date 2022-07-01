@@ -5,6 +5,9 @@
   margin: 0;
   padding: 0;
 }
+body {
+  background: #121212;
+}
 #app {
   height: 100vh;
   width: 100vw;
@@ -59,17 +62,37 @@ form input, .custom-select {
   max-height: 200px;
 }
 /*Here begins the construction style of the table with the data from the dataBase*/
+.overflow {
+  overflow-y: scroll;
+  max-height: 500px;
+}
+.overflow::-webkit-scrollbar {
+  width: 8px;
+}
+.overflow::-webkit-scrollbar-track {
+  background: #0dcaf0;
+}
+.overflow::-webkit-scrollbar-thumb {
+  background-color: #6c757d;
+  border-radius: 12px;
+  border: 3px solid #0dcaf9;
+}
 table {
   position: relative;
-  max-height: 50%!important;
-  overflow-y: scroll;
-  width: 40rem!important;
+  width: 100%;
   font-size: 1.2rem;
   background: #F6F6F6;
   box-shadow: 0 1px 12px #FAFAFA99;
   border: 1px solid #121212;
   border-radius: 4px;
 }
+.table {
+  margin-bottom: 0!important;
+}
 th {
   text-align: center!important;
+  padding: 0.3rem 1rem;
+}
+td {
+  padding: 0.3rem 1rem;
 }
