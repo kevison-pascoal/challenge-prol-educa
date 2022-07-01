@@ -3,35 +3,35 @@
   function toRegister() {
     app.innerHTML = `
       <h1 class="titleSection">Registration<h1>
-      <form action="server.php" method="POST">
-        <div class="containerInput">
+      <form action="server.php" method="POST" id="form">
+        <div class="containerInput" onmousemove="enable()">
           <div class="input-group">
-            <input type="text" name="firstName" id="firstName" class="form-control" placeholder="firstName">
-            <input type="text" name="lastName" id="lastName" class="form-control" placeholder="lastName">
+            <input type="text" name="firstName" id="firstName" class="form-control" onblur="(this.placeholder='firstName')" onclick="(this.style='border: 1px solid #ced4da;')" placeholder="firstName">
+            <input type="text" name="lastName" id="lastName" class="form-control" onblur="(this.placeholder='lastName')" onclick="(this.style='border: 1px solid #ced4da;')" placeholder="lastName">
           </div>
           <div class="input-group">
-            <input type="tel" name="tel" id="tel" class="form-control" onkeydown="return maskTelephone(event)" placeholder="telephone">
-            <input type="text" name="date" id="date" class="form-control" onfocus="(this.type='date')" placeholder="birth date"></input> 
+            <input type="tel" name="tel" id="tel" class="form-control" onblur="(this.placeholder='telephone')" onclick="(this.style='border: 1px solid #ced4da;')" style="" onkeydown="return maskTelephone(event)" placeholder="telephone">
+            <input type="text" name="date" id="date" class="form-control" onblur="(this.placeholder='date')" onfocus="(this.type='date')" onclick="(this.style='border: 1px solid #ced4da;')" placeholder="birth date"></input> 
           </div>
             
           <div class="input-group">
-            <input type="text" name="email" id="email" class="form-control" placeholder="@exemple.com">
+            <input type="text" name="email" id="email" class="form-control" onblur="(this.placeholder='@exemple.com')" onclick="(this.style='border: 1px solid #ced4da;')" placeholder="@exemple.com">
           </div>
 
           <div class="input-group">
-            <input type="text" name="mother" id="mother" class="form-control" placeholder="mother's name">
-            <input type="text" name="father" id="father" class="form-control" placeholder="father's name">
+            <input type="text" name="mother" id="mother" class="form-control" onblur="(this.placeholder='mother name')" onclick="(this.style='border: 1px solid #ced4da;')" placeholder="mother's name">
+            <input type="text" name="father" id="father" class="form-control" onblur="(this.placeholder='father name')" onclick="(this.style='border: 1px solid #ced4da;')" placeholder="father's name">
           </div>
 
           <div class="input-group">
-            <select class="custom-select" name="state" id="inputGroupSelect02">
+            <select class="custom-select" name="state" id="inputGroupSelect02" onclick="(this.style='border: 1px solid #ced4da;')">
               <option selected>Choose your state...</option>
             </select>
-            <input type="text" name="city" id="city" class="form-control" placeholder="write your city" aria-describedby="basic-addon1">
+            <input type="text" name="city" id="city" class="form-control" onblur="(this.placeholder='write your city')" onclick="(this.style='border: 1px solid #ced4da;')" placeholder="write your city" aria-describedby="basic-addon1">
           </div>
         </div>
         <div class="confirmRegister">
-          <input type="submit" class="btn btn-outline-success btn-lg" value="Send"></input>
+          <input type="submit" id="send" class="btn btn-outline-success btn-lg" onclick="checkData()" value="Send"></input>
           <input type="button" id="back" class="btn btn-outline-secondary btn-lg" onclick="backToIndex()" value="Back"></input>
         </div>
       </form>
