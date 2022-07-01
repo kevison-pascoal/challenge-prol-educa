@@ -9,9 +9,9 @@
   $state = $_POST['state'];
   $city = $_POST['city'];
   $id = rand(10000, 99999); 
-  if(empty($name)) {
+  if(empty($name) || empty($telephone) || empty($email) || empty($date) || empty($state)) {
     header('location: index.php');  
-    die("<br>Error! Fill in all fields");
+    exit;
   } else {
     $sql = "INSERT INTO register(id, fullName, telephone, email, birthDate, mother, father, state, city) VALUES(:id, :name, :telephone, :email, :date, :mother, :father, :state, :city)";
     $stmt = $orm->prepare($sql);
