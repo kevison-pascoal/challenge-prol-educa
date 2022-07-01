@@ -70,31 +70,35 @@
   function listData() {
     app.innerHTML = `
       <h1 class="titleSection">List Users</h1>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col">id</th>
-            <th scope="col">Name</th>
-            <th scope="col">Telephone</th>
-            <th scope="col">E-mail</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php
-            while($row = $stmt->fetch(PDO::FETCH_OBJ)) {
-              echo "
-                <tr>
-                  <td scope=".$row->user_id.">".$row->user_id."</td>
-                  <td>".$row->name."</td>
-                  <td>".$row->telephone."</td>
-                  <td>".$row->email."</td>
-                </tr>
-              ";
-            }
-          ?>
-        </tbody>
-      </table>
-      <input type="button" id="back" class="btn btn-outline-secondary btn-lg" onclick="backToIndex()" value="Back" style="margin: 2rem; color: #FAFAFA"></input>
+      <div class="overflow">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col" colspan="2">Name</th>
+              <th scope="col">Telephone</th>
+              <th scope="col">E-mail</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+              while($row = $stmt->fetch(PDO::FETCH_OBJ)) {
+                echo "
+                  <tr>
+                    <td scope=".$row->user_id.">".$row->user_id."</td>
+                    <td>".$row->name."</td>
+                    <td>".$row->telephone."</td>
+                    <td>".$row->email."</td>
+                  </tr>
+                ";
+              }
+            ?>
+          </tbody>
+        </table>
+      </div>
+      <div class="confirmRegister">
+        <input type="button" id="back" class="btn btn-outline-secondary btn-lg" onclick="backToIndex()" value="Back"></input>
+        <input type="button" id="register" class="btn btn-outline-info btn-lg" onclick="toRegister()" value="Register"></input>
+      </div>
     `
   }
   function backToIndex() {
