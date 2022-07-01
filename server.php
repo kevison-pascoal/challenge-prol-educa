@@ -1,5 +1,6 @@
 <?php
   include('./class/connect.php');
+
   $name = $_POST['firstName']." ".$_POST['lastName'];
   $telephone = $_POST['tel'];
   $email = $_POST['email'];
@@ -7,7 +8,8 @@
   $mother_name = $_POST['mother'];
   $father_name = $_POST['father'];
   $state = $_POST['state'];
-  $city = $_POST['city']; 
+  $city = $_POST['city'];
+
   if(empty($name) || empty($telephone) || empty($email) || empty($date) || empty($state)) {
     header('location: index.php');  
     exit;
@@ -23,10 +25,12 @@
     $stmt->bindParam(':state', $state);
     $stmt->bindParam(':city', $city);
     $result = $stmt->execute();
+
     if(!$result) {
       var_dump($stmt->errorInfo());
       exit;
     }
+    
     header('location: index.php');
   }
 ?>
