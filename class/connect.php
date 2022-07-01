@@ -6,11 +6,14 @@
     $dataBase = 'challenge';
     $table = 'register';
     $orm = new PDO("mysql:host=$hostname", $username, $passwordName);
+
     $sql= "CREATE DATABASE IF NOT EXISTS $dataBase;
     GRANT ALL ON $dataBase TO $username@$hostname;
     FLUSH PRIVILEGES;";
     $orm->prepare($sql)->execute();
+
     $orm = new PDO("mysql:host=$hostname;dbname=$dataBase", $username, $passwordName);
+
     $sql = "CREATE TABLE IF NOT EXISTS $table (
       user_id INT (11) NOT NULL AUTO_INCREMENT,
       name VARCHAR (40) NOT NULL,
@@ -24,6 +27,7 @@
       PRIMARY KEY (user_id)
     )";
     $orm->prepare($sql)->execute();
+    
     $stmt = $orm->prepare("SELECT * FROM $table");
     $stmt->execute(array());
   } catch (PDOException $e) {
